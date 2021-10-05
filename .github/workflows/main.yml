@@ -1,7 +1,4 @@
-
 name: JIRA Connection
-
-
 
 on:
   pull_request:
@@ -16,13 +13,9 @@ jobs:
     runs-on: ubuntu-latest
     name: JIRA Association
     steps:
-      - name: Jira ticket creation
-        uses: camelotls/actions-jira-integration@v2.1.1
       - name: Check for JIRA ISSUE
         id: check
         uses: supplypike/jira-pr-link-action@v1
         with:
           ignore-author: dependabot[bot]
           project: "SRENEW"
-  
- 
