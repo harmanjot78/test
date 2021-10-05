@@ -1,12 +1,7 @@
 name: JIRA Connection
 
-on:
-  pull_request:
-    types:
-      - opened
-      - reopened
-      - edited
-      - synchronize
+
+on: [push]
 
 jobs:
   enforce-issue:
