@@ -18,4 +18,4 @@ jobs:
         uses: supplypike/jira-pr-link-action@v1
         with:
           ignore-author: dependabot[bot]
-          project: "SRENEW"
+          project: "T1"
