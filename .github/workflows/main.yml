@@ -11,9 +11,14 @@ jobs:
   validate-pr-title:
     runs-on: ubuntu-latest
     steps:
-    - uses: Slashgear/action-check-pr-title@v1.0.0
+    - name: Enforce Pull Request Title includes Jira Issue Key
+      uses: ryanvade/enforce-pr-title-style-action@v1
       with:
-        regex: '([a-z])+' # Regex the title should match.
+        projectKey: T1
+
+#     - uses: Slashgear/action-check-pr-title@v1.0.0
+#       with:
+#         regex: '([a-z])+' # Regex the title should match.
 
 #     steps:
 #       - name: Checkout
