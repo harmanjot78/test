@@ -1,5 +1,4 @@
-name: JIRA Connection
-
+name: 'Validate Pull Request Title'
 on:
   pull_request:
     types:
@@ -9,14 +8,39 @@ on:
       - synchronize
 
 jobs:
-  enforce-issue:
+  validate-pr-title:
     runs-on: ubuntu-latest
-    name: JIRA Association
     steps:
-    - name: Enforce Jira Issue Key in Pull Request Title
-      uses: wllmtrng/enforce-pr-title-style-action@v1
-      with:
-        projectKey: T1
+      - name: Checkout
+        uses: actions/checkout@v2
+      - name: Validate PR Title
+        uses: actions/pull-request-title-validation@v1
+        with:
+          pr-title: "${{ github.event.pull_request.title }}"
+
+
+
+
+
+# name: JIRA Connection
+
+# on:
+#   pull_request:
+#     types:
+#       - opened
+#       - reopened
+#       - edited
+#       - synchronize
+
+# jobs:
+#   enforce-issue:
+#     runs-on: ubuntu-latest
+#     name: JIRA Association
+#     steps:
+#     - name: Enforce Jira Issue Key in Pull Request Title
+#       uses: wllmtrng/enforce-pr-title-style-action@v1
+#       with:
+#         projectKey: T1
 
 #     - name: Autosquash
 #       uses: tibdex/autosquash@v2.2.2
