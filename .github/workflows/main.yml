@@ -13,8 +13,8 @@ jobs:
     runs-on: ubuntu-latest
     name: JIRA Association
     steps:
-#     - name: Autosquash
-#       uses: tibdex/autosquash@v2.2.2
+    - name: Autosquash
+      uses: tibdex/autosquash@v2.2.2
     - uses: actions/checkout@v1
     - uses: dylanvann/check-pull-request-title@v0.1.14
       with:
