@@ -15,6 +15,8 @@ jobs:
     steps:
     - name: Autosquash
       uses: tibdex/autosquash@v2.2.2
+      with: # Set the secret as an input
+          github_token: ${{ secrets.AUTOSQUASH_TOKEN }}
     - uses: actions/checkout@v1
     - uses: dylanvann/check-pull-request-title@v0.1.14
       with:
