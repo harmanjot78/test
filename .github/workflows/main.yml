@@ -13,10 +13,18 @@ jobs:
     runs-on: ubuntu-latest
     name: JIRA Association
     steps:
-      - name: Check for JIRA ISSUE
-        id: check
-        uses: harmanjot78/jira-pr-link-action@v1
-        with:
-          ignore-author: dependabot[bot]
+    - name: Autosquash
+      uses: tibdex/autosquash@v2.2.2
+    - uses: actions/checkout@v1
+    - uses: dylanvann/check-pull-request-title@v1
+      with:
+          # Match pull request titles in the form UI-1234 - Message.
+          pattern: '^UI-\d* - '
+
+#       - name: Check for JIRA ISSUE
+#         id: check
+#         uses: harmanjot78/jira-pr-link-action@v1
+#         with:
+#           ignore-author: dependabot[bot]
 #           project: "T1"
 #           issue: "T1-3"
