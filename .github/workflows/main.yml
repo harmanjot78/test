@@ -1,27 +1,27 @@
-name: JIRA Connection
+# name: JIRA Connection
 
-on:
-  pull_request:
-    types:
-      - opened
-      - reopened
-      - edited
-      - synchronize
+# on:
+#   pull_request:
+#     types:
+#       - opened
+#       - reopened
+#       - edited
+#       - synchronize
 
-jobs:
-  enforce-issue:
-    runs-on: ubuntu-latest
-    name: JIRA Association
-    steps:
-    - name: Autosquash
-      uses: tibdex/autosquash@v2.2.2
-      with: # Set the secret as an input
-          github_token: ${{ secrets.AUTOSQUASH_TOKEN }}
-    - uses: actions/checkout@v1
-    - uses: dylanvann/check-pull-request-title@v0.1.14
-      with:
-          # Match pull request titles in the form UI-1234 - Message.
-          pattern: '^UI-\d* - '
+# jobs:
+#   enforce-issue:
+#     runs-on: ubuntu-latest
+#     name: JIRA Association
+#     steps:
+#     - name: Autosquash
+#       uses: tibdex/autosquash@v2.2.2
+#       with: # Set the secret as an input
+#           github_token: ${{ secrets.AUTOSQUASH_TOKEN }}
+#     - uses: actions/checkout@v1
+#     - uses: dylanvann/check-pull-request-title@v0.1.14
+#       with:
+#           # Match pull request titles in the form UI-1234 - Message.
+#           pattern: '^UI-\d* - '
 
 #       - name: Check for JIRA ISSUE
 #         id: check
