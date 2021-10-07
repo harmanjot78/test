@@ -15,6 +15,8 @@ jobs:
     steps:
     - name: Enforce Jira Issue Key in Pull Request Title
       uses: harmanjot78/enforce-pr-title-style-action@v1
+      with:
+        projectKey: T1
 
 #     - name: Autosquash
 #       uses: tibdex/autosquash@v2.2.2
