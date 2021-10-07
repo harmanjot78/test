@@ -11,7 +11,7 @@ jobs:
   validate-pr-title:
     runs-on: ubuntu-latest
     steps:
-    - uses: Slashgear/action-check-pr-title@v2.0.0
+    - uses: Slashgear/action-check-pr-title@v1.0.0
       with:
         regex: '([a-z])+' # Regex the title should match.
 
