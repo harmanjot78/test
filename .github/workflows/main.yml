@@ -1,18 +1,21 @@
-# name: JIRA Connection
+name: JIRA Connection
 
-# on:
-#   pull_request:
-#     types:
-#       - opened
-#       - reopened
-#       - edited
-#       - synchronize
+on:
+  pull_request:
+    types:
+      - opened
+      - reopened
+      - edited
+      - synchronize
 
-# jobs:
-#   enforce-issue:
-#     runs-on: ubuntu-latest
-#     name: JIRA Association
-#     steps:
+jobs:
+  enforce-issue:
+    runs-on: ubuntu-latest
+    name: JIRA Association
+    steps:
+    - name: Enforce Jira Issue Key in Pull Request Title
+      uses: ryanvade/enforce-pr-title-style-action@v1
+
 #     - name: Autosquash
 #       uses: tibdex/autosquash@v2.2.2
 #       with: # Set the secret as an input
