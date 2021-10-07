@@ -19,3 +19,4 @@ jobs:
         with:
           ignore-author: dependabot[bot]
           project: "T1"
+          issue: "T1-3"
