@@ -16,7 +16,7 @@ jobs:
 #     - name: Autosquash
 #       uses: tibdex/autosquash@v2.2.2
     - uses: actions/checkout@v1
-    - uses: interrobangc/check-pull-request-title@v1
+    - uses: interrobangc/check-pull-request-title@0.1.17
       with:
           # Match pull request titles in the form UI-1234 - Message.
           pattern: '^UI-\d* - '
