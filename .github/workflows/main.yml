@@ -1,18 +1,18 @@
-name: 'Validate Pull Request Title'
-on:
-  pull_request:
-    types:
-      - opened
-      - reopened
-      - edited
-      - synchronize
+# name: 'Validate Pull Request Title'
+# on:
+#   pull_request:
+#     types:
+#       - opened
+#       - reopened
+#       - edited
+#       - synchronize
 
-jobs:
-  validate-pr-title:
-    runs-on: ubuntu-latest
-    steps:
-    - name: Enforce Pull Request Title includes Jira Issue Key
-      uses: ryanvade/enforce-pr-title-style-action@v1
+# jobs:
+#   validate-pr-title:
+#     runs-on: ubuntu-latest
+#     steps:
+#     - name: Enforce Pull Request Title includes Jira Issue Key
+#       uses: ryanvade/enforce-pr-title-style-action@v1
 #       with:
 #         projectKey: T1
 
@@ -32,21 +32,21 @@ jobs:
 
 
 
-# name: JIRA Connection
+name: JIRA Connection
 
-# on:
-#   pull_request:
-#     types:
-#       - opened
-#       - reopened
-#       - edited
-#       - synchronize
+on:
+  pull_request:
+    types:
+      - opened
+      - reopened
+      - edited
+      - synchronize
 
-# jobs:
-#   enforce-issue:
-#     runs-on: ubuntu-latest
-#     name: JIRA Association
-#     steps:
+jobs:
+  enforce-issue:
+    runs-on: ubuntu-latest
+    name: JIRA Association
+    steps:
 #     - name: Enforce Jira Issue Key in Pull Request Title
 #       uses: wllmtrng/enforce-pr-title-style-action@v1
 #       with:
@@ -62,10 +62,10 @@ jobs:
 #           # Match pull request titles in the form UI-1234 - Message.
 #           pattern: '^UI-\d* - '
 
-#       - name: Check for JIRA ISSUE
-#         id: check
-#         uses: harmanjot78/jira-pr-link-action@v1
-#         with:
-#           ignore-author: dependabot[bot]
-#           project: "T1"
+      - name: Check for JIRA ISSUE
+        id: check
+        uses: harmanjot78/jira-pr-link-action@v1
+        with:
+          ignore-author: dependabot[bot]
+          project: "T1"
 #           issue: "T1-3"
